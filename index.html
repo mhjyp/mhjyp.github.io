@@ -47,10 +47,6 @@
 
       const h2 = document.createElement("h2");
       h2.setAttribute("style", `flex:1; text-align:${align}; color:${color}`);
-      h2.innerText = `${spaceReplacer("prefix")}${diff}${
-        formatMap[format]
-      }${spaceReplacer(suffix)}`;
-      document.body.append(h2);
       document.body.parentElement.setAttribute(
         "style",
         `display: flex; flex: 1; height: 100%; background-color:${bgColor};`
