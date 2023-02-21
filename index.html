@@ -39,7 +39,6 @@
       const sinceDateString = params.get("since") || "2022-12-04";
 
       const prefix = params.get("prefix") ? params.get("prefix") + " " : " ";
-      const suffix = params.get("suffix") ? " " + params.get("suffix") : " days";
 
       const since = dayjs(sinceDateString);
       const now = dayjs();
@@ -47,7 +46,9 @@
 
       const h2 = document.createElement("h2");
       h2.setAttribute("style", `flex:1; text-align:${align}; color:${color}`);
-      h2.innerText = `${spaceReplacer(suffix)}`;
+      h2.innerText = `${diff}${
+        formatMap[format]
+      }`;
       document.body.append(h2);
       document.body.parentElement.setAttribute(
         "style",
